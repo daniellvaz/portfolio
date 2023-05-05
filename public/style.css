@@ -110,6 +110,10 @@ header {
   justify-content: center;
 }
 
+header > svg {
+  width: 100%;
+}
+
 .header__content > h1 {
   margin-bottom: 8px;
   color: var(--text-color);
