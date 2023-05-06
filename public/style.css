@@ -62,6 +62,10 @@ nav ul li:hover {
   border-radius: 999px;
 }
 
+.btn__group {
+  display: flex;
+  gap: 1rem;
+}
 
 .btn {
   width: fit-content;
@@ -76,6 +80,15 @@ nav ul li:hover {
   justify-content: space-between;
 
   transition: filter 0.2s;
+}
+
+.lined {
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+}
+
+.lined:hover {
+  background-color: var(--secondary-color);
 }
 
 .btn:hover {
