@@ -2,11 +2,11 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Desenvolvimento web">
-  <meta name="keywords" content="HTML, CSS, JavaScript, React, React-native">
-  <meta name="author" content="Daniel Murilo Vaz">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="author" content="Daniel Murilo Vaz">
   <meta name="title" content="Fullstack developer - Daniel Murilo Vaz">
+  <meta name="keywords" content="HTML, CSS, JavaScript, React, React-native, Daniel Murilo Vaz">
   <meta name="description" content="Trabalho a mais de 4 anos com desenvolvimento de interfaces.">
 
   <!-- Open Graph / Facebook -->
@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
+  <nav class="menu">
     <a class="btn" href="https://wa.link/7xw189"  target="_blank" rel="noopener noreferrer">
       <p>Entre em Contato</p>
       <i class="ph ph-whatsapp-logo"></i>
@@ -54,57 +54,55 @@
         </a>
       </li>
     </ul>
+
+    <button class="hamburguer">
+      <div></div>
+      <div id="down"></div>
+    </button>
   </nav>
 
+  <nav id="menu" class="menu__mobile">
+    <ul>
+      <li>
+        <a href="https://github.com/daniellvaz" target="_blank" rel="noopener noreferrer">
+          <i class="ph ph-github-logo"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/daniellmurilo" target="_blank" rel="noopener noreferrer">
+          <i class="ph ph-instagram-logo"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
   <main>
     <header>
       <div class="header__content">
         <h1>
-          Olá, eu sou o Daniel! 👋🏻
+          Olá, eu sou o Daniel!<div>👋🏻</div>
         </h1>
         <p>
           Sou desenvolvedor fullstack, atuando a mais de quatro anos no mercado.
           Trabalhei em diversos projetos nas empresas que passei, atuando tanto
           no front-end quanto no back-end e agora também auxiliando no DevOps.
         </p>
+        
         <div class="btn__group">
           <a class="btn" href="https://www.linkedin.com/in/daniel-murilo-vaz/" target="_blank"  rel="noopener noreferrer">
             <p>
-              Conheça Minha Trajetória
+              Minha Trajetória
             </p>
           </a>
           <a class="btn lined" href="https://www.behance.net/danielmurilovaz" target="_blank"  rel="noopener noreferrer">
             <p>
-              Meu Perfil no Behance
+              Perfil no Behance
             </p>
           </a>
         </div>
       </div>
 
-      <svg width="640" height="449" viewBox="0 0 640 449" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g filter="url(#filter0_d_103_66)">
-          <rect id="last" width="288" height="288" rx="46.1958" transform="matrix(0.866025 0.5 -0.866025 0.5 312.5 73)" fill="#444444" fill-opacity="0.75"/>
-          <rect id="medium" width="288" height="288" rx="46.1958" transform="matrix(0.866025 0.5 -0.866025 0.5 312.5 41.32)" fill="#3D3D3D" fill-opacity="0.75"/>
-          <g id="first">
-            <path d="M272.493 24.0979C294.588 11.3413 330.412 11.3413 352.507 24.0979L521.909 121.902C544.004 134.659 544.004 155.341 521.909 168.098L352.507 265.902C330.412 278.659 294.588 278.659 272.493 265.902L103.091 168.098C80.9963 155.341 80.9963 134.659 103.091 121.902L272.493 24.0979Z" fill="#2F2F2F"/>
-            <path d="M200.901 147.008L312.92 82.3344L363.809 111.715C375.971 118.737 384.346 126.282 388.933 134.351C393.627 142.358 394.427 150.273 391.333 158.095C388.24 165.918 380.985 173.125 369.57 179.715C358.261 186.244 345.779 190.433 332.123 192.28C318.574 194.067 304.812 193.635 290.836 190.987C276.967 188.277 263.952 183.411 251.79 176.389L200.901 147.008ZM248.109 149.688L271.793 163.362C279.261 167.673 287.103 170.599 295.317 172.139C303.745 173.679 312.067 173.802 320.281 172.509C328.603 171.277 336.284 168.628 343.325 164.563C350.473 160.436 355.061 156.001 357.088 151.259C359.328 146.516 359.061 141.742 356.287 136.938C353.727 132.133 348.713 127.575 341.245 123.264L317.561 109.59L248.109 149.688Z" fill="white"/>
-            <circle cx="8.64" cy="8.64" r="8.64" transform="matrix(0.866025 0.5 -0.866025 0.5 319.982 198.28)" fill="#A33992"/>
-          </g>
-        </g>
-        <defs>
-        <filter id="filter0_d_103_66" x="-13.7053" y="-13.4362" width="739.028" height="475.49" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-        <feOffset dx="43.3086" dy="43.3086"/>
-        <feGaussianBlur stdDeviation="28.8724"/>
-        <feComposite in2="hardAlpha" operator="out"/>
-        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_103_66"/>
-        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_103_66" result="shape"/>
-        </filter>
-        </defs>
-      </svg>
+      <img src="/public/img/logo.svg" alt="">
     </header>
     <section class="stacks">
       <h2>Minhas Stacks ⚡</h2>

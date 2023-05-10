@@ -1,15 +1,8 @@
-const item = document.getElementById("first")
+const down = document.getElementById('down')
+const menu = document.getElementById('menu')
+const hamburger = document.querySelector('.hamburguer')
 
-const animation = [
-  { transform: "translateY(-20px)" },
-  { transform: "translateY(0px)" },
-]
-
-window.onwheel = (e) => {
-  if(e.deltaY >= 0) {
-    item.animate(animation, {
-      duration: 800,
-      easing: 'ease'
-    })
-  }
-}
+hamburger.addEventListener('click', () => {
+  down.classList.toggle('open');
+  menu.classList.toggle('menu__open');
+})

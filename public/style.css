@@ -43,23 +43,47 @@ nav {
   border-bottom: 1px solid var(--border-color);
 }
 
-nav ul {
+.menu ul {
   display: flex;
   gap: 1rem;
   align-items: center;
   justify-content: center;
 }
 
-nav ul li {
+.menu ul li {
   width: fit-content;
   padding: 1rem;
 
   cursor: pointer;
 }
 
-nav ul li:hover {
+.menu ul li:hover {
   background-color: rgba(94, 94, 94, 0.2);
   border-radius: 999px;
+}
+
+.menu__mobile {
+  position: absolute;
+  left: 0;
+  top: -999px;
+  z-index: 1;
+
+  background-color: var(--background-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: menu-down 2s alternate;
+}
+
+.menu__open {
+  top: 6rem !important;
+}
+
+.menu__mobile > ul {
+  display: flex;
+  gap: 1rem;
 }
 
 .btn__group {
@@ -83,12 +107,79 @@ nav ul li:hover {
 }
 
 .lined {
+  position: relative;
+
   background-color: transparent;
   border: 1px solid var(--secondary-color);
 }
 
-.lined:hover {
+.lined::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  z-index: -1;
+
+  border-radius: 8px;
   background-color: var(--secondary-color);
+
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+}
+
+.lined::before {
+  transform: scaleX(0);
+}
+
+.lined:hover::before {
+  transform: scaleX(100%);
+}
+
+.hamburguer {
+  padding: 1rem;
+
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.hamburguer > div {
+  width: 40px;
+  height: 4px;
+
+  border-radius: 2px;
+
+  background-color: var(--text-color);
+}
+
+.hamburguer > div#down {
+  transform: translateX(-10px);
+  
+  transition: all 0.2s;
+}
+
+.hamburguer > div#down.open {
+  transform: translateX(0px);
+}
+
+.btn__wrapper {
+  height: 100%;
+  position: absolute;
+  
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  background-color: var(--secondary-color);
+
+  border-radius: 8px;
 }
 
 .btn:hover {
@@ -102,7 +193,7 @@ nav ul li:hover {
 header {
   max-width: 1440px;
   width: 100%;
-  height: 80vh;
+  min-height: 80vh;
   margin: 0 auto;
   padding: 2rem;
   
@@ -128,11 +219,31 @@ header > svg {
 }
 
 .header__content > h1 {
+  width: fit-content;
   margin-bottom: 8px;
   color: var(--text-color);
   font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
   line-height: 58px;
+
+  display: flex;
+}
+
+@keyframes hey {
+  0% {
+    transform: rotate(-15deg);
+  } 
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+
+.header__content > h1 > div {
+  width: fit-content;
+  animation: hey 1s infinite;
 }
 
 .header__content > p {
@@ -219,4 +330,14 @@ footer > p {
 
   font-size: 0.75rem;
   font-weight: 500;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .hamburguer {
+    display: flex;
+  }
+
+  .menu > ul {
+    display: none;
+  }
 }
