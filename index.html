@@ -26,7 +26,8 @@
   <meta name="theme-color" content="#121212" />
   <meta name="apple-mobile-web-app-status-bar-style" content="#4285f4">
 
-  <link rel="stylesheet" href="public/style.mim.css">
+  <script src="/public/tailwindcss.js"></script>
+  <link rel="stylesheet" href="/public/style.css">
   <link rel="shortcut icon" href="/public/img/favicon.svg" type="image/svg">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
@@ -34,106 +35,243 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
-  <title>Daniel Vaz | Fullstack Developer</title>
+  <title>Daniel Murilo Vaz | Desenvolvedor de software</title>
 </head>
-<body>
-  <nav class="menu">
-    <a class="btn" href="https://wa.link/7xw189"  target="_blank" rel="noopener noreferrer">
-      <p>Entre em Contato</p>
-      <i class="ph ph-whatsapp-logo"></i>
-    </a>
-
-    <ul>
-      <li>
-        <a href="https://github.com/daniellvaz" target="_blank" rel="noopener noreferrer">
-          <i class="ph ph-github-logo"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/daniellmurilo" target="_blank" rel="noopener noreferrer">
-          <i class="ph ph-instagram-logo"></i>
-        </a>
-      </li>
-    </ul>
-
-    <button class="hamburguer">
-      <div></div>
-      <div id="down"></div>
-    </button>
+<body class="bg-zinc-950">
+  <nav class="w-full p-4 border-b border-b-zinc-900">
+    <div class="w-full max-w-[1120px] m-auto flex items-center justify-between">
+      <a href="/">
+        <img class="w-10" src="/public/img/logo.svg" alt="Daniel Murilo Vaz">
+      </a>
+      <ul class="flex gap-4 text-zinc-50">
+        <li>
+          <a href="#home">Início</a>
+        </li>
+        <li>
+          <a href="#about">Sobre</a>
+        </li>
+        <li>
+          <a href="#projects">Projetos</a>
+        </li>
+        <li>
+          <a href="#contact">Contato</a>
+        </li>
+      </ul>
+      <a target="_blank" href="#" class="px-4 py-2 bg-indigo-700 flex gap-4 items-center text-zinc-50 rounded hover:bg-indigo-700/75R transition-colors">
+        <p>Entrar em contato</p>
+        <i class="ph ph-chat-circle"></i>
+      </a>
+    </div>
   </nav>
-
-  <nav id="menu" class="menu__mobile">
-    <ul>
-      <li>
-        <a href="https://github.com/daniellvaz" target="_blank" rel="noopener noreferrer">
-          <i class="ph ph-github-logo"></i>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/daniellmurilo" target="_blank" rel="noopener noreferrer">
-          <i class="ph ph-instagram-logo"></i>
-        </a>
-      </li>
-    </ul>
-  </nav>
-
-  <main>
-    <header>
-      <div class="header__content">
-        <h1>
-          Olá, eu sou o Daniel!<div>👋🏻</div>
-        </h1>
-        <p>
-          Sou desenvolvedor fullstack, atuando a mais de quatro anos no mercado.
-          Trabalhei em diversos projetos nas empresas que passei, atuando tanto
-          no front-end quanto no back-end e agora também auxiliando no DevOps.
+  <main class="w-full"> 
+    <div class="w-[358px] h-[358px] fixed -top-[179px] -right-[300px] rounded-full bg-indigo-700 blur-[350px]"></div>
+    <section id="home" class="w-full max-w-[1120px] m-auto">
+      <div class="w-fit px-4 py-2 mb-6 mt-8 bg-zinc-900 border border-zinc-600 rounded text-zinc-50 flex gap-4 items-center">
+        <div class="w-[8px] h-[8px] rounded-full bg-emerald-500"></div>
+        <small class="text-xs">Disponível para freelancer</small>
+      </div>
+      <h1 class="text-zinc-50 text-5xl font-bold mb-6">
+        Prazer, meu nome é Daniel! <br>
+        Sou desenvolvedor de software.
+      </h1>
+      <h2 class="text-zinc-50 text-2xl">
+        Com mais de 5 anos de experiência atuo no desenvolvimento de 
+        soluções para as mais diversas áreas do mercado, utilizando 
+        as tecnologias mais modernas alinhado com padrões de códigos 
+        e processos muito bem definidos para garantir qualidade e uma 
+        entrega rápida.
+      </h2>
+    </section>
+    <hr class="max-w-[1120px] m-auto mt-16 mb-16 border-zinc-800">
+    <section id="about" class="w-full max-w-[1120px] m-auto grid gap-12 grid-cols-3">
+      <div class="w-full col-span-2">
+        <h2 class="text-2xl font-semibold text-zinc-50">
+          Um pouco mais sobre mim! 😎
+        </h2>
+        <p class="text-zinc-50 mt-4">
+          Atualmente trabalho como desenvolvedor fullstack em uma grande 
+          rede de supermercados aqui do Paraná. Atuo no desenvolvimento e 
+          manutenção de sistemas internos bem como integrações com API`s 
+          de terceiros. Atualmente utilizamos como ferramentas de desenvolvimento 
+          Nodejs, React, Mysql e Oracle e ainda PHP com Laravel em alguns projetos. 
+          Além do código, atuo na parte de deploy automático das aplicações e na 
+          revisão de códigos de desenvolvedores juniors. Parar saber mais sobre mim 
+          e minha trajetória acesse os links abaixo:
         </p>
-        
-        <div class="btn__group">
-          <a class="btn" href="https://www.linkedin.com/in/daniel-murilo-vaz/" target="_blank"  rel="noopener noreferrer">
-            <p>
-              Trajetória
-            </p>
+
+        <div class="mt-4 flex gap-4 items-center">
+          <a target="_blank" href="#" class="w-fit px-4 py-2 bg-indigo-700 flex gap-4 items-center text-zinc-50 rounded hover:bg-indigo-800 transition-colors">
+            <p>Minha trajetória</p>
           </a>
-          <a class="btn lined" href="https://www.behance.net/danielmurilovaz" target="_blank"  rel="noopener noreferrer">
-            <p>
-              Behance
-            </p>
+          <a target="_blank" href="#" class="w-fit px-4 py-2 bg-zinc-50 flex gap-4 items-center text-zinc-950 rounded hover:bg-zinc-100 transition-colors">
+            <p>Envie um email</p>
+            <i class="ph ph-envelope"></i>
           </a>
         </div>
       </div>
 
-      <img src="/public/img/logo.svg" alt="">
-    </header>
-    <section class="stacks">
-      <h2>Minhas Stacks ⚡</h2>
+      <img class="col-start-3" src="/public/img/avatar.png" alt="Daniel Murilo Vaz">
+    </section>
+    <section id="stacks_container">
+      <div id="stacks_wrapper">
+      </div>
+    </section>
+    <section id="projects" class="w-full max-w-[1120px] m-auto mt-16">
+      <div id="project_container">
+        <h2 class="mb-8 text-3xl font-bold text-zinc-50">Projetos recentes 🚀</h2>
+      </div>
 
-      <div class="stacks__content">
-        <div class="card">
-          <img src="public/img/node.svg" alt="">
-          <p>NodeJs</p>
-        </div>
-        <div class="card">
-          <img src="public/img/react.svg" alt="">
-          <p>React</p>
-        </div>
-        <div class="card">
-          <img src="public/img/react-native.svg" alt="">
-          <p>Reac-Native</p>
-        </div>
-        <div class="card">
-          <img src="public/img/typescript.svg" alt="">
-          <p>Typescript</p>
+      <div class="mt-16">
+        <h2 class="mb-8 text-3xl font-bold text-zinc-50">Projetos pessoais 🔥</h2>
+
+        <div class="grid grid-cols-2 gap-2 items-start">
+          <div>
+            <div class="w-fit px-4 py-2 mb-6 bg-zinc-900 border border-zinc-600 rounded text-zinc-50 flex gap-4 items-center">
+              <div class="w-[8px] h-[8px] rounded-full bg-emerald-500"></div>
+              <small class="text-xs">Em desenvolvimento</small>
+            </div>
+            <h2 class="text-2xl font-bold text-zinc-50">
+              Support Track - Plataforma de suportes web.
+            </h2>
+            <p class="text-zinc-50 mt-4">
+              A plataforma consiste em uma solução para fornecer um suporte ao 
+              cliente direto do site, fornecendo ao usuário uma forma barata e 
+              eficiente de se conectar com seu cliente. A plataforma irá dispor 
+              de um chat real-time, abertura de tickets e inclusão de feedbacks 
+              sobre o produto ou serviço, tudo isso com pagamentos mensais e com 
+              um valor justo.
+            </p>
+            <div class="py-4 flex gap-2 items-center">
+              <div class="px-3 py-1 bg-zinc-800 border border-zinc-600 text-zinc-50 rounded">
+                <small class="text-xs">Nodejs</small>
+              </div>
+              <div class="px-3 py-1 bg-zinc-800 border border-zinc-600 text-zinc-50 rounded">
+                <small class="text-xs">React</small>
+              </div>
+              <div class="px-3 py-1 bg-zinc-800 border border-zinc-600 text-zinc-50 rounded">
+                <small class="text-xs">Postgresql</small>
+              </div>
+              <div class="px-3 py-1 bg-zinc-800 border border-zinc-600 text-zinc-50 rounded">
+                <small class="text-xs">Prismajs</small>
+              </div>
+            </div>
+          </div>
+          <img class="w-full rounded-lg" src="https://placehold.co/600x400" alt="Placeholder">
         </div>
       </div>
     </section>
-    <footer>
-      <p>
-        Daniel Murilo Vaz &copy; 2023 | Todos os direitos reservados
-      </p>
-    </footer>
+    <section id="contact" class="w-full max-w-[1120px] m-auto mt-16 grid gap-4 grid-cols-2 relative overflow-hidden">
+      <form class="w-full flex flex-col space-y-4">
+        <h2 class="text-zinc-50 font-bold text-2xl">Entre em contato</h2>
+        <input 
+          name="name" 
+          type="text" 
+          placeholder="Nome completo"
+          class="p-2 bg-zinc-800 text-zinc-50 placeholder-zinc-600 border border-zinc-600 rounded outline-none focus:border-indigo-700 transition-colors" 
+        >
+        <input 
+          name="subject" 
+          type="text" 
+          placeholder="Assunto"
+          class="p-2 bg-zinc-800 text-zinc-50 placeholder-zinc-600 border border-zinc-600 rounded outline-none focus:border-indigo-700 transition-colors" 
+        >
+        <input 
+          name="email" 
+          type="email" 
+          placeholder="E-mail"
+          class="p-2 bg-zinc-800 text-zinc-50 placeholder-zinc-600 border border-zinc-600 rounded outline-none focus:border-indigo-700 transition-colors" 
+        >
+        <input 
+          name="phone" 
+          type="text" 
+          placeholder="Telefone"
+          class="p-2 bg-zinc-800 text-zinc-50 placeholder-zinc-600 border border-zinc-600 rounded outline-none focus:border-indigo-700 transition-colors" 
+        >
+        <textarea 
+          rows="5"
+          type="text" 
+          name="description"
+          class="p-4 bg-zinc-800 text-zinc-50 placeholder-zinc-600 border border-zinc-600 rounded outline-none focus:border-indigo-700 transition-colors"
+        ></textarea>
+        <button class="w-fit px-4 py-2 bg-indigo-700 flex gap-4 items-center justify-center text-zinc-50 rounded hover:bg-indigo-700/75R transition-colors">
+          Enviar
+          <i class="ph ph-paper-plane-tilt"></i>
+        </button>
+      </form>
+      <div class="relative">
+        <img class="absolute top-0 left-0 w-screen h-full -ml-1/2 object-cover" src="/public/img/code.png" alt="Codding">
+      </div>
+    </section>
   </main>
+  <footer class="w-full mt-16">
+    <div class="w-full max-w-[1120px] py-4 m-auto flex items-start justify-between">
+      <div>
+        <a href="/">
+          <img src="/public/img/logo.svg" alt="">
+        </a>
+        <div class="mt-6">
+          <strong class="text-zinc-50">Siga-me nas redes sociais</strong>
+          <div class="mt-2 flex gap-2">
+            <a class="p-2 bg-zinc-800 rounded shadow-lg text-zinc-50 flex itens-center justify-center hover:bg-zinc-900 transition-colors" href="#">
+              <i class="ph ph-instagram-logo"></i>
+            </a>
+            <a class="p-2 bg-zinc-800 rounded shadow-lg text-zinc-50 flex itens-center justify-center hover:bg-zinc-900 transition-colors" href="#">
+              <i class="ph ph-facebook-logo"></i>
+            </a>
+            <a class="p-2 bg-zinc-800 rounded shadow-lg text-zinc-50 flex itens-center justify-center hover:bg-zinc-900 transition-colors" href="#">
+              <i class="ph ph-twitch-logo"></i>
+            </a>
+            <a class="p-2 bg-zinc-800 rounded shadow-lg text-zinc-50 flex itens-center justify-center hover:bg-zinc-900 transition-colors" href="#">
+              <i class="ph ph-x-logo"></i>
+            </a>
+            <a class="p-2 bg-zinc-800 rounded shadow-lg text-zinc-50 flex itens-center justify-center hover:bg-zinc-900 transition-colors" href="#">
+              <i class="ph ph-linkedin-logo"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <strong class="text-zinc-50">
+          Contato
+        </strong>
+        <ul class="text-zinc-50 text-sm mt-4">
+          <li>(41) 99705-7041</li>
+          <li>(41) 98449-1829 - Whatsapp</li>
+          <li>daniellmvaz@gmail.com</li>
+        </ul>
+      </div>
+      <div>
+        <strong class="text-zinc-50">
+          Mapa do site
+        </strong>
+        <ul class="text-zinc-50 mt-4">
+          <li>
+            <a class="hover:text-zinc-400 transition-colors" href="#home">Início</a>
+          </li>
+          <li>
+            <a class="hover:text-zinc-400 transition-colors" href="#about">Sobre</a>
+          </li>
+          <li>
+            <a class="hover:text-zinc-400 transition-colors" href="#projects">Projetos</a>
+          </li>
+          <li>
+            <a class="hover:text-zinc-400 transition-colors" href="#contact">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="w-full border-t border-t-zinc-900">
+      <div class="w-full max-w-[1120px] m-auto py-4 flex items-center justify-between">
+        <small class="text-zinc-50 text-xs">
+          2024 Daniel Murilo Vaz - Todos os direitos reservados
+        </small>
 
+        <a href="#home" class="p-4 bg-indigo-700 flex gap-4 items-center text-zinc-50 rounded hover:bg-indigo-700/75R transition-colors">
+          <i class="ph ph-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
   <script src="public/index.js"></script>
 </body>
 </html>
