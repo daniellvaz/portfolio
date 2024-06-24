@@ -1,3 +1,4 @@
+const upButton = document.getElementById("up");
 const stacksContainer = document.getElementById("stacks_wrapper");
 const projectsContainer = document.getElementById("project_container");
 
@@ -38,7 +39,7 @@ const projects = [
       "Distribuidora Pneu Top - integração com api de um ERP e automação de processos",
     description:
       "Nesse projetos desenvolvi uma integração com o ERP do Bling e automatizei processos de transporte conectando a plataforma com as empresas de entrega. A medida que os produtos são entregues a integração informa a plataforma do status do pedido facilitando o processo de baixa dos pedidos finalizados. Além disso, passamos a ter um histórico completo do rastreamento do pedido bem como uma média de tempo de enterga e qual empresa é mais rápida nesse processo.",
-    image: "https://placehold.co/600x400",
+    image: "public/img/projects/distribuidora-pneu-top.png",
     concluded_at: null,
     projectStacks: [
       { id: Math.random(), title: "Nodejs" },
@@ -52,7 +53,7 @@ const projects = [
     title: "Engaje - Plataforma de gestão de processos seletivos.",
     description:
       "Nesse projeto desenvolvi uma aplicação web aonde a empresa gerencia a abertura de novas vagas pelos seus clientes, cadastrando informações do cargo disponível e disponibilizando ao cliente um visão geral do processo, desde o inicio da triagem até a contratação.",
-    image: "https://placehold.co/600x400",
+    image: "public/img/projects/engaje.png",
     completed_at: "2023",
     projectStacks: [
       { id: Math.random(), title: "PHP" },
@@ -65,7 +66,7 @@ const projects = [
     title: "OUI - Plataforma de gestão de processos jurídicos.",
     description:
       "Nesse projeto foi desenvolvido uma aplicação para gerenciamento de processos jurídicos. Atuei em alguns pontos do back-end da aplicação que utilizava o Flask do Python (o que fui um grande desavio) e na estruturação do HTML e CSS da plataforma.",
-    image: "https://placehold.co/600x400",
+    image: "public/img/projects/oui.png",
     completed_at: "2022",
     projectStacks: [
       { id: Math.random(), title: "Python" },
@@ -104,7 +105,7 @@ const projectCard = (project) => `
         ${project.description}
       </p>
       <div class="py-4 flex gap-2 items-center">
-        ${project.projectStacks.forEach((stack) => stackBadge(stack.title))}
+        ${project.projectStacks.map((stack) => stackBadge(stack.title))}
       </div>
     </div>
     <img class="w-full rounded-lg" src="${project.image}" alt="${
@@ -112,6 +113,13 @@ const projectCard = (project) => `
 }">
   </div>
 `;
+
+upButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
 
 projects.forEach((project) => {
   projectsContainer.innerHTML += projectCard(project);
@@ -124,13 +132,4 @@ stacks.forEach((stack) => {
   img.alt = stack.alt;
 
   stacksContainer.appendChild(img);
-
-  stacks.forEach((stack) => {
-    const img = document.createElement("img");
-
-    img.src = stack.image;
-    img.alt = stack.alt;
-
-    stacksContainer.appendChild(img);
-  });
 });

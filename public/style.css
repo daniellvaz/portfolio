@@ -20,7 +20,7 @@ html {
 #stacks_wrapper {
   padding-block: 1rem;
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
 }
 
 #stacks_container > #stacks_wrapper {
@@ -32,6 +32,6 @@ html {
 
 @keyframes scroll {
   to {
-    transform: translate(calc(-50% - 0.5rem));
+    transform: translate(calc(-30% - 0.5rem));
   }
 }
