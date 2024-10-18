@@ -30,8 +30,24 @@ html {
   animation-timeline: scroll(root);
 }
 
-@keyframes scroll {
-  to {
-    transform: translate(calc(-30% - 0.5rem));
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    scale: .8; opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-30% - 0.5rem));
+    }
+  }
+  
+  @keyframes fade-in {  
+    to {
+      scale: 1;
+      opacity: 1
+    }
   }
 }

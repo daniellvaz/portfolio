@@ -26,6 +26,8 @@
   <meta name="theme-color" content="#121212" />
   <meta name="apple-mobile-web-app-status-bar-style" content="#4285f4">
 
+  <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
+
   <script src="public/tailwindcss.js"></script>
   <link rel="stylesheet" href="public/style.css">
   <link rel="shortcut icon" href="public/img/logo.svg" type="image/svg">
@@ -38,7 +40,7 @@
   <title>Daniel Murilo Vaz | Desenvolvedor de software</title>
 </head>
 <body class="bg-zinc-950">
-  <nav class="w-full p-4 border-b border-b-zinc-900">
+  <nav class="w-full p-4 border-b border-b-zinc-900 fixed top-0 bg-zinc-950/75 z-10">
     <div class="w-full max-w-[1120px] m-auto flex items-center justify-between">
       <a href="/">
         <img class="w-10" src="public/img/logo.svg" alt="Daniel Murilo Vaz">
@@ -63,7 +65,7 @@
       </a>
     </div>
   </nav>
-  <main class="w-full"> 
+  <main class="w-full mt-24"> 
     <div class="w-[358px] h-[358px] fixed -top-[179px] -right-[300px] rounded-full bg-indigo-700 blur-[350px]"></div>
     <div class="w-[358px] h-[358px] fixed -bottom-[179px] -left-[350px] rounded-full bg-indigo-700 blur-[350px]"></div>
     <section id="home" class="w-full max-w-[1120px] m-auto">
@@ -75,13 +77,16 @@
         Prazer, meu nome é Daniel! <br>
         Sou desenvolvedor de software.
       </h1>
-      <h2 class="text-zinc-50 text-2xl">
+      <p class="text-zinc-50 text-xl mb-8">
         Com mais de 5 anos de experiência atuo no desenvolvimento de 
         soluções para as mais diversas áreas do mercado, utilizando 
         as tecnologias mais modernas alinhado com padrões de códigos 
         e processos muito bem definidos para garantir qualidade e uma 
         entrega rápida.
-      </h2>
+      </p>
+      <a href="form.html" class="w-fit px-4 py-2 bg-zinc-50 flex gap-4 items-center text-zinc-950 rounded hover:bg-zinc-100 transition-colors">
+        <p>Solicitar um orçamento</p>
+      </a>
     </section>
     <hr class="max-w-[1120px] m-auto mt-16 mb-16 border-zinc-800">
     <section id="about" class="w-full max-w-[1120px] m-auto grid gap-12 grid-cols-3">
@@ -157,11 +162,11 @@
               </div>
             </div>
           </div>
-          <img class="w-full rounded-lg" src="public/img/projects/support-track.png" alt="Placeholder">
+          <img class="w-full rounded-lg fade-in" src="public/img/projects/support-track.png" alt="Placeholder">
         </div>
       </div>
     </section>
-    <section id="contact" class="w-full max-w-[1120px] m-auto mt-16 grid gap-4 grid-cols-2 relative overflow-hidden">
+    <!-- <section id="contact" class="w-full max-w-[1120px] m-auto mt-16 grid gap-4 grid-cols-2 relative overflow-hidden">
       <form class="w-full flex flex-col space-y-4">
         <h2 class="text-zinc-50 font-bold text-2xl">Entre em contato</h2>
         <input 
@@ -202,7 +207,7 @@
       <div class="relative">
         <img class="absolute top-0 left-0 w-screen h-full -ml-1/2 object-cover" src="public/img/code.png" alt="Codding">
       </div>
-    </section>
+    </section> -->
   </main>
   <footer class="w-full mt-16">
     <div class="w-full max-w-[1120px] py-4 m-auto flex items-start justify-between">

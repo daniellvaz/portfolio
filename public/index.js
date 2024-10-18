@@ -108,7 +108,7 @@ const projectCard = (project) => `
         ${project.projectStacks.map((stack) => stackBadge(stack.title))}
       </div>
     </div>
-    <img class="w-full rounded-lg" src="${project.image}" alt="${
+    <img class="w-full rounded-lg fade-in" src="${project.image}" alt="${
   project.title
 }">
   </div>
