@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://metatags.io/">
   <meta property="og:title" content="Fullstack developer - Daniel Murilo Vaz">
-  <meta property="og:description" content="Trabalho a mais de 4 anos com desenvolvimento de interfaces.">
+  <meta property="og:description" content="Trabalho a mais de 5 anos com desenvolvimento de interfaces.">
   <meta property="og:image" content="https://daniellvaz.github.io/portfolio/public/img/image.png">
 
   <!-- Twitter -->
@@ -40,12 +40,13 @@
   <title>Daniel Murilo Vaz | Desenvolvedor de software</title>
 </head>
 <body class="bg-zinc-950">
-  <nav class="w-full p-4 border-b border-b-zinc-900 fixed top-0 bg-zinc-950/75 z-10">
+  <nav class="w-full p-4 border-b border-b-zinc-800 bg-zinc-950 z-10 relative">
+    <menu-component></menu-component>
     <div class="w-full max-w-[1120px] m-auto flex items-center justify-between">
       <a href="/portfolio/">
         <img class="w-10" src="public/img/logo.svg" alt="Daniel Murilo Vaz">
       </a>
-      <ul class="flex gap-4 text-zinc-50">
+      <ul class="gap-4 text-zinc-50 hidden md:flex">
         <li>
           <a href="#home">Início</a>
         </li>
@@ -59,25 +60,48 @@
           <a href="#contact">Contato</a>
         </li>
       </ul>
-      <a target="_blank" href="https://wa.me/5541984491829?text=Ol%C3%A1%2C%20tudo%20bem%3F" class="px-4 py-2 bg-indigo-700 flex gap-4 items-center text-zinc-50 rounded hover:bg-indigo-700/75 transition-colors">
-        <p>Entrar em contato</p>
+      <a target="_blank" href="https://wa.me/5541984491829?text=Ol%C3%A1%2C%20tudo%20bem%3F" class="w-fit hidden md:flex px-4 py-2 bg-indigo-700 gap-4 items-center text-zinc-50 rounded hover:bg-indigo-700/75 transition-colors">
+        <p>Contato</p>
+        <i class="ph ph-chat-circle"></i>
+      </a>
+      <button id="menu-button" class="md:hidden cursor-pointer p-2 bg-zinc-800 rounded shadow-lg text-zinc-50 flex itens-center justify-center hover:bg-zinc-900 transition-colors">
+        <i class="ph ph-list"></i>
+      </button>
+    </div>
+    <div id="menu" data-state="close" class="w-full p-4 data-[state=close]:hidden">
+      <ul class="w-full text-zinc-50 text-center p-4">
+        <li class="w-full p-4">
+          <a href="#home">Início</a>
+        </li>
+        <li class="w-full p-4">
+          <a href="#about">Sobre</a>
+        </li>
+        <li class="w-full p-4">
+          <a href="#projects">Projetos</a>
+        </li>
+        <li class="w-full p-4">
+          <a href="#contact">Contato</a>
+        </li>
+      </ul>
+      <a target="_blank" href="https://wa.me/5541984491829?text=Ol%C3%A1%2C%20tudo%20bem%3F" class="w-full flex px-4 py-2 bg-indigo-700 gap-2 items-center justify-center text-zinc-50 rounded hover:bg-indigo-700/75 transition-colors">
+        <p>Contato</p>
         <i class="ph ph-chat-circle"></i>
       </a>
     </div>
   </nav>
-  <main class="w-full mt-24"> 
+  <main class="w-full"> 
     <div class="w-[358px] h-[358px] fixed -top-[179px] -right-[300px] rounded-full bg-indigo-700 blur-[350px]"></div>
     <div class="w-[358px] h-[358px] fixed -bottom-[179px] -left-[350px] rounded-full bg-indigo-700 blur-[350px]"></div>
-    <section id="home" class="w-full max-w-[1120px] m-auto">
+    <section id="home" class="w-full max-w-[1120px] m-auto p-4">
       <div class="w-fit px-4 py-2 mb-6 mt-8 bg-zinc-900 border border-zinc-600 rounded text-zinc-50 flex gap-4 items-center">
         <div class="w-[8px] h-[8px] rounded-full bg-emerald-500"></div>
         <small class="text-xs">Disponível para freelancer</small>
       </div>
-      <h1 class="text-zinc-50 text-5xl font-bold mb-6">
+      <h1 class="text-zinc-50 md:text-5xl text-2xl font-bold mb-6">
         Prazer, meu nome é Daniel! <br>
         Sou desenvolvedor de software.
       </h1>
-      <p class="text-zinc-50 text-xl mb-8">
+      <p class="text-zinc-50 md:text-xl text-lg mb-8">
         Com mais de 5 anos de experiência atuo no desenvolvimento de 
         soluções para as mais diversas áreas do mercado, utilizando 
         as tecnologias mais modernas alinhado com padrões de códigos 
@@ -88,41 +112,12 @@
         <p>Solicitar um orçamento</p>
       </a>
     </section>
-    <hr class="max-w-[1120px] m-auto mt-16 mb-16 border-zinc-800">
-    <section id="about" class="w-full max-w-[1120px] m-auto grid gap-12 grid-cols-3">
-      <div class="w-full col-span-2">
-        <h2 class="text-2xl font-semibold text-zinc-50">
-          Um pouco mais sobre mim! 😎
-        </h2>
-        <p class="text-zinc-50 mt-4">
-          Atualmente trabalho como desenvolvedor fullstack em uma grande 
-          rede de supermercados aqui do Paraná. Atuo no desenvolvimento e 
-          manutenção de sistemas internos bem como integrações com API`s 
-          de terceiros. Atualmente utilizamos como ferramentas de desenvolvimento 
-          Nodejs, React, Mysql e Oracle e ainda PHP com Laravel em alguns projetos. 
-          Além do código, atuo na parte de deploy automático das aplicações e na 
-          revisão de códigos de desenvolvedores juniors. Parar saber mais sobre mim 
-          e minha trajetória acesse os links abaixo:
-        </p>
-
-        <div class="mt-4 flex gap-4 items-center">
-          <a target="_blank" href="https://www.linkedin.com/in/daniel-murilo-vaz/" class="w-fit px-4 py-2 bg-indigo-700 flex gap-4 items-center text-zinc-50 rounded hover:bg-indigo-800 transition-colors">
-            <p>Minha trajetória</p>
-          </a>
-          <a href="mailto:daniellmvaz@gmail.com" class="w-fit px-4 py-2 bg-zinc-50 flex gap-4 items-center text-zinc-950 rounded hover:bg-zinc-100 transition-colors">
-            <p>Envie um email</p>
-            <i class="ph ph-envelope"></i>
-          </a>
-        </div>
-      </div>
-
-      <img class="col-start-3" src="public/img/avatar.png" alt="Daniel Murilo Vaz">
-    </section>
-    <section id="stacks_container">
+    <section id="stacks_container" class="py-4">
       <div id="stacks_wrapper">
       </div>
     </section>
-    <section id="projects" class="w-full max-w-[1120px] m-auto mt-16">
+    <hr class="my-16 mb-16 border-zinc-800">
+    <section id="projects" class="w-full max-w-[1120px] m-auto p-4">
       <div id="project_container">
         <h2 class="mb-8 text-3xl font-bold text-zinc-50">Projetos recentes 🚀</h2>
       </div>
@@ -130,16 +125,16 @@
       <div class="mt-16">
         <h2 class="mb-8 text-3xl font-bold text-zinc-50">Projetos pessoais 🔥</h2>
 
-        <div class="grid grid-cols-2 gap-2 items-start">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 items-start">
           <div>
             <div class="w-fit px-4 py-2 mb-6 bg-zinc-900 border border-zinc-600 rounded text-zinc-50 flex gap-4 items-center">
-              <div class="w-[8px] h-[8px] rounded-full bg-emerald-500"></div>
-              <small class="text-xs">Em desenvolvimento</small>
+              <div class="w-[8px] h-[8px] rounded-full bg-indigo-500"></div>
+              <small class="text-xs">Finalizado em 2024</small>
             </div>
             <h2 class="text-2xl font-bold text-zinc-50">
               Support Track - Plataforma de suportes web.
             </h2>
-            <p class="text-zinc-50 mt-4">
+            <p class="text-zinc-50 my-4">
               A plataforma consiste em uma solução para fornecer um suporte ao 
               cliente direto do site, fornecendo ao usuário uma forma barata e 
               eficiente de se conectar com seu cliente. A plataforma irá dispor 
@@ -147,6 +142,7 @@
               sobre o produto ou serviço, tudo isso com pagamentos mensais e com 
               um valor justo.
             </p>
+            <a class="text-zinc-50 underline" href="https://github.com/daniellvaz/support-track" target="_blank" rel="noopener noreferrer">Repositório Github</a>
             <div class="py-4 flex gap-2 items-center">
               <div class="px-3 py-1 bg-zinc-800 border border-zinc-600 text-zinc-50 rounded">
                 <small class="text-xs">Nodejs</small>
@@ -166,7 +162,7 @@
         </div>
       </div>
     </section>
-    <!-- <section id="contact" class="w-full max-w-[1120px] m-auto mt-16 grid gap-4 grid-cols-2 relative overflow-hidden">
+    <section id="contact" class="w-full max-w-[1120px] p-4 m-auto grid gap-4 grid-cols-1 md:grid-cols-2 relative overflow-hidden">
       <form class="w-full flex flex-col space-y-4">
         <h2 class="text-zinc-50 font-bold text-2xl">Entre em contato</h2>
         <input 
@@ -204,13 +200,13 @@
           <i class="ph ph-paper-plane-tilt"></i>
         </button>
       </form>
-      <div class="relative">
+      <div class="relative hidden md:block">
         <img class="absolute top-0 left-0 w-screen h-full -ml-1/2 object-cover" src="public/img/code.png" alt="Codding">
       </div>
-    </section> -->
+    </section>
   </main>
-  <footer class="w-full mt-16">
-    <div class="w-full max-w-[1120px] py-4 m-auto flex items-start justify-between">
+  <footer class="w-full">
+    <div class="w-full max-w-[1120px] p-4 m-auto grid grid-cols-1 md:grid-cols-3 gap-4">
       <div>
         <a href="/portifolio">
           <img src="public/img/logo.svg" alt="Daniel Murilo Vaz">
@@ -266,7 +262,7 @@
         </ul>
       </div>
     </div>
-    <div class="w-full border-t border-t-zinc-900">
+    <div class="w-full border-t border-t-zinc-900 p-4">
       <div class="w-full max-w-[1120px] m-auto py-4 flex items-center justify-between">
         <small class="text-zinc-50 text-xs">
           2024 Daniel Murilo Vaz - Todos os direitos reservados
@@ -278,6 +274,6 @@
       </div>
     </div>
   </footer>
-  <script src="public/index.js"></script>
+  <script type="module" src="public/index.js"></script>
 </body>
 </html>
