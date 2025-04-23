@@ -36,5 +36,7 @@ stacks.forEach((stack) => {
   img.src = stack.image;
   img.alt = stack.alt;
 
+  img.className = "mx-4";
+
   stacksContainer.appendChild(img);
 });
