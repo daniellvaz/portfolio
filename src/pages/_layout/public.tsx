@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
-import type { HTMLAttributes } from "react";
 
-export type PrivateLayoutProps = {} & HTMLAttributes<HTMLElement>;
+import { Navbar } from "../../components/navbar";
 
-export function PublicLayout({ ...rest }: PrivateLayoutProps) {
+export function PublicLayout() {
   return (
-    <div {...rest}>
+    <>
+      <Navbar />
       <Outlet />
-    </div>
+    </>
   );
 }
