@@ -69,7 +69,7 @@ const projectCard = (project) => `
     <div>
       <div class="w-fit px-4 py-2 mb-6 bg-zinc-900 border border-zinc-600 rounded text-zinc-50 flex gap-4 items-center">
         <div class="w-[8px] h-[8px] rounded-full ${
-          project.completed_at ? "bg-indigo-500" : "bg-emerald-500"
+          project.completed_at ? "primary-light" : "bg-emerald-500"
         }"></div>
         <small class="text-xs">
           ${
