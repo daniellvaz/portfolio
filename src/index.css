@@ -4,6 +4,34 @@ html {
   scroll-behavior: smooth;
 }
 
+#stacks_container {
+  max-width: 1120px;
+  padding: 1rem;
+  margin: 0 auto;
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+#stacks_wrapper {
+  padding-block: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#stacks_container > #stacks_wrapper {
+  width: 100vw;
+  flex-wrap: nowrap;
+  animation: scroll linear;
+  animation-timeline: scroll(root);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .fade-in {
     scale: .8; opacity: 0;

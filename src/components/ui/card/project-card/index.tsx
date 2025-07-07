@@ -1,49 +1,55 @@
-export function ProjectCard() {
+import type { Project } from "../../../../http/generated/api.schemas";
+
+interface ProjectCardProps {
+  data?: Project;
+}
+
+export function ProjectCard({ data }: ProjectCardProps) {
+  if (!data) {
+    return <p>Sem items para mostrar</p>;
+  }
+
+  console.log(data);
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 items-start">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 items-start mb-12">
       <div>
         <div className="w-fit px-4 py-2 mb-6 bg-zinc-900 border border-zinc-600 rounded text-zinc-50 flex gap-4 items-center">
-          <div className="w-[8px] h-[8px] rounded-full primary-light"></div>
-          <small className="text-xs">Finalizado em 2024</small>
+          <div
+            data-concluded={!!data.concludedAt}
+            className="w-[8px] h-[8px] rounded-full data-[concluded=true]:bg-primary-main data-[concluded=false]:bg-blue-500"
+          ></div>
+          <small className="text-xs">
+            {data.concludedAt
+              ? `Finalizado em ${data.concludedAt}`
+              : "Em andamento"}
+          </small>
         </div>
-        <h2 className="text-2xl font-bold text-zinc-50">
-          Support Track - Plataforma de suportes web.
-        </h2>
-        <p className="text-zinc-50 my-4">
-          A plataforma consiste em uma solução para fornecer um suporte ao
-          cliente direto do site, fornecendo ao usuário uma forma barata e
-          eficiente de se conectar com seu cliente. A plataforma irá dispor de
-          um chat real-time, abertura de tickets e inclusão de feedbacks sobre o
-          produto ou serviço, tudo isso com pagamentos mensais e com um valor
-          justo.
-        </p>
+        <h2 className="text-2xl font-bold text-zinc-50">{data.title}</h2>
+        <p className="text-zinc-50 my-4">{data.description}</p>
         <a
-          className="text-zinc-50 underline"
-          href="https://github.com/daniellvaz/support-track"
           target="_blank"
+          href={data.repoUrl}
           rel="noopener noreferrer"
+          className="text-zinc-50 underline"
         >
           Repositório Github
         </a>
         <div className="py-4 flex gap-2 items-center">
-          <div className="px-3 py-1 bg-foreground/10 border border-zinc-600 text-zinc-50 rounded">
-            <small className="text-xs">Nodejs</small>
-          </div>
-          <div className="px-3 py-1 bg-foreground/10 border border-zinc-600 text-zinc-50 rounded">
-            <small className="text-xs">React</small>
-          </div>
-          <div className="px-3 py-1 bg-foreground/10 border border-zinc-600 text-zinc-50 rounded">
-            <small className="text-xs">Postgresql</small>
-          </div>
-          <div className="px-3 py-1 bg-foreground/10 border border-zinc-600 text-zinc-50 rounded">
-            <small className="text-xs">Prismajs</small>
-          </div>
+          {data.stacks &&
+            data.stacks?.map((stack) => (
+              <div
+                key={stack.id}
+                className="px-3 py-1 bg-foreground/10 border border-zinc-600 text-zinc-50 rounded"
+              >
+                <small className="text-xs">{stack.name}</small>
+              </div>
+            ))}
         </div>
       </div>
       <img
+        src={import.meta.env.VITE_STRAPI_URL + data.cover?.url}
         className="w-full rounded-lg fade-in"
-        src="public/img/projects/support-track.png"
-        alt="Placeholder"
+        alt={data.cover?.alternativeText}
       />
     </div>
   );

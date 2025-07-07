@@ -4,7 +4,7 @@ import Logo from "../../../assets/img/logo.svg";
 
 export function Navbar() {
   return (
-    <nav className="w-full p-4 border-b border-b-zinc-800 bg-background z-10 relative">
+    <nav className="w-full p-4 border-b border-b-zinc-800 bg-background z-10 fixed top-0">
       <div className="w-full max-w-[1120px] m-auto flex items-center justify-between">
         <a href="/portfolio/">
           <img className="w-1/2" src={Logo} alt="Daniel Murilo Vaz" />

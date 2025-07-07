@@ -2,33 +2,47 @@ import { PaperPlaneTiltIcon } from "@phosphor-icons/react";
 import FormImage from "../../../assets/img/code.png";
 import { Button } from "../../../components/ui/form/button";
 import { ProjectCard } from "../../../components/ui/card/project-card";
+import { useGetProjects } from "../../../http/generated/project/project";
+import { useGetStacks } from "../../../http/generated/stack/stack";
 
 export function Home() {
+  const { data: projects } = useGetProjects({
+    populate: "*",
+  });
+  const { data: stacks } = useGetStacks({
+    populate: "*",
+  });
+
   return (
-    <main className="w-full bg-background">
+    <main className="w-full bg-background mt-[5rem]">
       <div className="w-[358px] h-[358px] fixed -top-[179px] -right-[300px] rounded-full bg-primary-main blur-[350px]"></div>
       <div className="w-[358px] h-[358px] fixed -bottom-[179px] -left-[350px] rounded-full bg-primary-main blur-[350px]"></div>
       <section id="home" className="w-full max-w-[1120px] m-auto p-4">
         <div className="w-fit px-4 py-2 mb-6 mt-8 bg-zinc-900 border border-zinc-600 rounded text-zinc-50 flex gap-4 items-center">
           <div className="w-[8px] h-[8px] rounded-full bg-emerald-500"></div>
-          <small className="text-xs">Disponível para freelancer</small>
+          <small className="text-xs">Disponível para novos projetos</small>
         </div>
         <h1 className="text-zinc-50 md:text-5xl text-2xl font-bold mb-6">
-          Prazer, meu nome é Daniel! <br />
-          Sou desenvolvedor de software.
+          Olá, nós somos a Moveup! <br />
+          Transformamos ideias em soluções digitais inteligentes.
         </h1>
         <p className="text-zinc-50 md:text-xl text-lg mb-8">
-          Com mais de 5 anos de experiência atuo no desenvolvimento de soluções
-          para as mais diversas áreas do mercado, utilizando as tecnologias mais
-          modernas alinhado com padrões de códigos e processos muito bem
-          definidos para garantir qualidade e uma entrega rápida.
+          Na Moveup Tecnologia, desenvolvemos softwares, aplicativos, automações{" "}
+          <br />e integrações sob medida para impulsionar o crescimento da sua
+          empresa.
         </p>
         <Button variant="ghost" iconRight={PaperPlaneTiltIcon}>
           Solicitar um orçamento
         </Button>
       </section>
       <section id="stacks_container">
-        <div id="stacks_wrapper"></div>
+        <div id="stacks_wrapper">
+          {stacks &&
+            stacks.data &&
+            stacks.data.map((stack) => (
+              <img src={import.meta.env.VITE_STRAPI_URL + stack.image?.url} />
+            ))}
+        </div>
       </section>
       <hr className="my-16 mb-16 border-zinc-800" />
       <section id="projects" className="w-full max-w-[1120px] m-auto p-4">
@@ -38,12 +52,24 @@ export function Home() {
           </h2>
         </div>
 
+        {projects &&
+          projects.data &&
+          projects.data.map(
+            (item) =>
+              !item.isPersonal && <ProjectCard data={item} key={item.id} />
+          )}
+
         <div className="mt-16">
           <h2 className="mb-8 text-3xl font-bold text-zinc-50">
             Projetos pessoais 🔥
           </h2>
 
-          <ProjectCard />
+          {projects &&
+            projects.data &&
+            projects.data.map(
+              (item) =>
+                item.isPersonal && <ProjectCard data={item} key={item.id} />
+            )}
         </div>
       </section>
       <section

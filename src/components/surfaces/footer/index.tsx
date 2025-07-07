@@ -105,7 +105,7 @@ export function Footer() {
             2024 Daniel Murilo Vaz - Todos os direitos reservados
           </small>
 
-          <button className="p-4 bg-indigo-700 flex gap-4 items-center text-zinc-50 rounded hover:bg-indigo-700/75 transition-colors">
+          <button className="p-4 bg-primary-main flex gap-4 items-center text-zinc-50 rounded hover:bg-primary-dark transition-colors cursor-pointer">
             <ArrowUpIcon />
           </button>
         </div>
