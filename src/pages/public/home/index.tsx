@@ -4,6 +4,9 @@ import { Button } from "../../../components/ui/form/button";
 import { ProjectCard } from "../../../components/ui/card/project-card";
 import { useGetProjects } from "../../../http/generated/project/project";
 import { useGetStacks } from "../../../http/generated/stack/stack";
+import { ContactForm } from "./components/contact-form";
+import { Text } from "@/components/typograph/text";
+import { Heading } from "@/components/typograph/heading";
 
 export function Home() {
   const { data: projects } = useGetProjects({
@@ -20,17 +23,20 @@ export function Home() {
       <section id="home" className="w-full max-w-[1120px] m-auto p-4">
         <div className="w-fit px-4 py-2 mb-6 mt-8 bg-zinc-900 border border-zinc-600 rounded text-zinc-50 flex gap-4 items-center">
           <div className="w-[8px] h-[8px] rounded-full bg-emerald-500"></div>
-          <small className="text-xs">Disponível para novos projetos</small>
+          <Text as="small" size="xs">
+            Disponível para novos projetos
+          </Text>
         </div>
-        <h1 className="text-zinc-50 md:text-5xl text-2xl font-bold mb-6">
+
+        <Heading as="h1" size="3xl" className="mb-4">
           Olá, nós somos a Moveup! <br />
           Transformamos ideias em soluções digitais inteligentes.
-        </h1>
-        <p className="text-zinc-50 md:text-xl text-lg mb-8">
+        </Heading>
+        <Text className="mb-12">
           Na Moveup Tecnologia, desenvolvemos softwares, aplicativos, automações{" "}
           <br />e integrações sob medida para impulsionar o crescimento da sua
           empresa.
-        </p>
+        </Text>
         <Button variant="ghost" iconRight={PaperPlaneTiltIcon}>
           Solicitar um orçamento
         </Button>
@@ -47,9 +53,7 @@ export function Home() {
       <hr className="my-16 mb-16 border-zinc-800" />
       <section id="projects" className="w-full max-w-[1120px] m-auto p-4">
         <div id="project_container">
-          <h2 className="mb-8 text-3xl font-bold text-zinc-50">
-            Projetos recentes 🚀
-          </h2>
+          <Heading className="mb-4">Projetos recentes 🚀</Heading>
         </div>
 
         {projects &&
@@ -60,9 +64,7 @@ export function Home() {
           )}
 
         <div className="mt-16">
-          <h2 className="mb-8 text-3xl font-bold text-zinc-50">
-            Projetos pessoais 🔥
-          </h2>
+          <Heading className="mb-4">Projetos pessoais 🔥</Heading>
 
           {projects &&
             projects.data &&
@@ -76,39 +78,7 @@ export function Home() {
         id="contact"
         className="w-full max-w-[1120px] p-4 m-auto grid gap-4 grid-cols-1 md:grid-cols-2 relative overflow-hidden"
       >
-        <form className="w-full flex flex-col space-y-4">
-          <h2 className="text-zinc-50 font-bold text-2xl">Entre em contato</h2>
-          <input
-            name="name"
-            type="text"
-            placeholder="Nome completo"
-            className="p-2 bg-foreground/10 text-zinc-50 placeholder-zinc-600 border border-zinc-600 rounded outline-none focus:border-primary-main transition-colors"
-          />
-          <input
-            name="subject"
-            type="text"
-            placeholder="Assunto"
-            className="p-2 bg-foreground/10 text-zinc-50 placeholder-zinc-600 border border-zinc-600 rounded outline-none focus:border-primary-main transition-colors"
-          />
-          <input
-            name="email"
-            type="email"
-            placeholder="E-mail"
-            className="p-2 bg-foreground/10 text-zinc-50 placeholder-zinc-600 border border-zinc-600 rounded outline-none focus:border-primary-main transition-colors"
-          />
-          <input
-            name="phone"
-            type="text"
-            placeholder="Telefone"
-            className="p-2 bg-foreground/10 text-zinc-50 placeholder-zinc-600 border border-zinc-600 rounded outline-none focus:border-primary-main transition-colors"
-          />
-          <textarea
-            rows={5}
-            name="description"
-            className="p-2 bg-foreground/10 text-zinc-50 placeholder-zinc-600 border border-zinc-600 rounded outline-none focus:border-primary-main transition-colors"
-          ></textarea>
-          <Button iconRight={PaperPlaneTiltIcon}>Enviar</Button>
-        </form>
+        <ContactForm />
         <div className="relative hidden md:block">
           <img
             className="absolute top-0 left-0 w-screen h-full -ml-1/2 object-cover"

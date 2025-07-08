@@ -1,6 +1,5 @@
 import {
   ArrowUpIcon,
-  FacebookLogoIcon,
   InstagramLogoIcon,
   LinkedinLogoIcon,
   TwitchLogoIcon,
@@ -14,25 +13,18 @@ export function Footer() {
     <footer className="w-full bg-background">
       <div className="w-full max-w-[1120px] p-4 m-auto grid grid-cols-1 md:grid-cols-3 gap-4">
         <div>
-          <a href="/portifolio">
+          <a href="/">
             <img src={Logo} alt="Daniel Murilo Vaz" />
           </a>
           <div className="mt-6">
-            <strong className="text-zinc-50">Siga-me nas redes sociais</strong>
+            <strong className="text-zinc-50">Siga-nos nas redes sociais</strong>
             <div className="mt-2 flex gap-2">
               <a
                 className="p-2 bg-foreground/10 rounded shadow-lg text-zinc-50 flex itens-center justify-center hover:bg-zinc-900 transition-colors"
                 target="_blank"
-                href="https://www.instagram.com/daniellmurilo"
+                href="https://www.instagram.com/moveuptech_"
               >
                 <InstagramLogoIcon />
-              </a>
-              <a
-                className="p-2 bg-foreground/10 rounded shadow-lg text-zinc-50 flex itens-center justify-center hover:bg-zinc-900 transition-colors"
-                target="_blank"
-                href="https://www.facebook.com/profile.php?id=100084374073135"
-              >
-                <FacebookLogoIcon />
               </a>
               <a
                 className="p-2 bg-foreground/10 rounded shadow-lg text-zinc-50 flex itens-center justify-center hover:bg-zinc-900 transition-colors"
@@ -44,14 +36,14 @@ export function Footer() {
               <a
                 className="p-2 bg-foreground/10 rounded shadow-lg text-zinc-50 flex itens-center justify-center hover:bg-zinc-900 transition-colors"
                 target="_blank"
-                href="https://x.com/daniellmvaz"
+                href="https://x.com/moveuptech_"
               >
                 <XLogoIcon />
               </a>
               <a
                 className="p-2 bg-foreground/10 rounded shadow-lg text-zinc-50 flex itens-center justify-center hover:bg-zinc-900 transition-colors"
                 target="_blank"
-                href="https://www.linkedin.com/in/daniel-murilo-vaz/"
+                href="https://www.linkedin.com/in/moveup.tech/"
               >
                 <LinkedinLogoIcon />
               </a>
@@ -102,7 +94,8 @@ export function Footer() {
       <div className="w-full border-t border-t-zinc-900 p-4">
         <div className="w-full max-w-[1120px] m-auto py-4 flex items-center justify-between">
           <small className="text-zinc-50 text-xs">
-            2024 Daniel Murilo Vaz - Todos os direitos reservados
+            {new Date().getFullYear()} Moveup Tecnologia - Todos os direitos
+            reservados
           </small>
 
           <button className="p-4 bg-primary-main flex gap-4 items-center text-zinc-50 rounded hover:bg-primary-dark transition-colors cursor-pointer">

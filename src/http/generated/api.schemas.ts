@@ -28,6 +28,213 @@ export interface Error {
   error: ErrorError;
 }
 
+export type ContactRequestDataLocalizationsItem = number | string;
+
+export type ContactRequestData = {
+  name: string;
+  subject: string;
+  email: string;
+  phone: string;
+  message: string;
+  locale?: string;
+  localizations?: ContactRequestDataLocalizationsItem[];
+};
+
+export interface ContactRequest {
+  data: ContactRequestData;
+}
+
+export type ContactListResponseMetaPagination = {
+  page?: number;
+  /** @minimum 25 */
+  pageSize?: number;
+  /** @maximum 1 */
+  pageCount?: number;
+  total?: number;
+};
+
+export type ContactListResponseMeta = {
+  pagination?: ContactListResponseMetaPagination;
+};
+
+export interface ContactListResponse {
+  data?: Contact[];
+  meta?: ContactListResponseMeta;
+}
+
+export type ContactCreatedByRolesItemUsersItem = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactCreatedByRolesItemPermissionsItemRole = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactCreatedByRolesItemPermissionsItemCreatedBy = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactCreatedByRolesItemPermissionsItemUpdatedBy = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactCreatedByRolesItemPermissionsItemLocalizationsItem = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactCreatedByRolesItemPermissionsItem = {
+  id?: number;
+  documentId?: string;
+  action?: string;
+  actionParameters?: unknown;
+  subject?: string;
+  properties?: unknown;
+  conditions?: unknown;
+  role?: ContactCreatedByRolesItemPermissionsItemRole;
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt?: string;
+  createdBy?: ContactCreatedByRolesItemPermissionsItemCreatedBy;
+  updatedBy?: ContactCreatedByRolesItemPermissionsItemUpdatedBy;
+  locale?: string;
+  localizations?: ContactCreatedByRolesItemPermissionsItemLocalizationsItem[];
+};
+
+export type ContactCreatedByRolesItemCreatedBy = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactCreatedByRolesItemUpdatedBy = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactCreatedByRolesItemLocalizationsItem = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactCreatedByRolesItem = {
+  id?: number;
+  documentId?: string;
+  name?: string;
+  code?: string;
+  description?: string;
+  users?: ContactCreatedByRolesItemUsersItem[];
+  permissions?: ContactCreatedByRolesItemPermissionsItem[];
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt?: string;
+  createdBy?: ContactCreatedByRolesItemCreatedBy;
+  updatedBy?: ContactCreatedByRolesItemUpdatedBy;
+  locale?: string;
+  localizations?: ContactCreatedByRolesItemLocalizationsItem[];
+};
+
+export type ContactCreatedByCreatedBy = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactCreatedByUpdatedBy = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactCreatedByLocalizationsItem = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactCreatedBy = {
+  id?: number;
+  documentId?: string;
+  firstname?: string;
+  lastname?: string;
+  username?: string;
+  email?: string;
+  resetPasswordToken?: string;
+  registrationToken?: string;
+  isActive?: boolean;
+  roles?: ContactCreatedByRolesItem[];
+  blocked?: boolean;
+  preferedLanguage?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt?: string;
+  createdBy?: ContactCreatedByCreatedBy;
+  updatedBy?: ContactCreatedByUpdatedBy;
+  locale?: string;
+  localizations?: ContactCreatedByLocalizationsItem[];
+};
+
+export type ContactUpdatedBy = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactLocalizationsItemCreatedBy = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactLocalizationsItemUpdatedBy = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactLocalizationsItemLocalizationsItem = {
+  id?: number;
+  documentId?: string;
+};
+
+export type ContactLocalizationsItem = {
+  id?: number;
+  documentId?: string;
+  name?: string;
+  subject?: string;
+  email?: string;
+  phone?: string;
+  message?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt?: string;
+  createdBy?: ContactLocalizationsItemCreatedBy;
+  updatedBy?: ContactLocalizationsItemUpdatedBy;
+  locale?: string;
+  localizations?: ContactLocalizationsItemLocalizationsItem[];
+};
+
+export interface Contact {
+  id?: number;
+  documentId?: string;
+  name?: string;
+  subject?: string;
+  email?: string;
+  phone?: string;
+  message?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt?: string;
+  createdBy?: ContactCreatedBy;
+  updatedBy?: ContactUpdatedBy;
+  locale?: string;
+  localizations?: ContactLocalizationsItem[];
+}
+
+export type ContactResponseMeta = { [key: string]: unknown };
+
+export interface ContactResponse {
+  data?: Contact;
+  meta?: ContactResponseMeta;
+}
+
 export type ProjectRequestDataCover = number | string;
 
 export type ProjectRequestDataStacksItem = number | string;
@@ -1107,6 +1314,49 @@ export type UsersPermissionsRoleRequestBody = {
   description?: string;
   type?: string;
   permissions?: UsersPermissionsPermissionsTree;
+};
+
+export type GetContactsParams = {
+  /**
+   * Sort by attributes ascending (asc) or descending (desc)
+   */
+  sort?: string;
+  /**
+   * Return page/pageSize (default: true)
+   */
+  "pagination[withCount]"?: boolean;
+  /**
+   * Page number (default: 0)
+   */
+  "pagination[page]"?: number;
+  /**
+   * Page size (default: 25)
+   */
+  "pagination[pageSize]"?: number;
+  /**
+   * Offset value (default: 0)
+   */
+  "pagination[start]"?: number;
+  /**
+   * Number of entities to return (default: 25)
+   */
+  "pagination[limit]"?: number;
+  /**
+   * Fields to return (ex: title,author)
+   */
+  fields?: string;
+  /**
+   * Relations to return
+   */
+  populate?: string;
+  /**
+   * Filters to apply
+   */
+  filters?: { [key: string]: unknown };
+  /**
+   * Locale to apply
+   */
+  locale?: string;
 };
 
 export type GetProjectsParams = {

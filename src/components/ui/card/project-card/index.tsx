@@ -1,4 +1,7 @@
+import { Text } from "@/components/typograph/text";
 import type { Project } from "../../../../http/generated/api.schemas";
+import { Heading } from "@/components/typograph/heading";
+import { Link } from "react-router-dom";
 
 interface ProjectCardProps {
   data?: Project;
@@ -6,10 +9,9 @@ interface ProjectCardProps {
 
 export function ProjectCard({ data }: ProjectCardProps) {
   if (!data) {
-    return <p>Sem items para mostrar</p>;
+    return <Text>Sem items para mostrar</Text>;
   }
 
-  console.log(data);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-2 items-start mb-12">
       <div>
@@ -18,30 +20,32 @@ export function ProjectCard({ data }: ProjectCardProps) {
             data-concluded={!!data.concludedAt}
             className="w-[8px] h-[8px] rounded-full data-[concluded=true]:bg-primary-main data-[concluded=false]:bg-blue-500"
           ></div>
-          <small className="text-xs">
+          <Text as="small">
             {data.concludedAt
               ? `Finalizado em ${data.concludedAt}`
               : "Em andamento"}
-          </small>
+          </Text>
         </div>
-        <h2 className="text-2xl font-bold text-zinc-50">{data.title}</h2>
-        <p className="text-zinc-50 my-4">{data.description}</p>
-        <a
-          target="_blank"
-          href={data.repoUrl}
-          rel="noopener noreferrer"
-          className="text-zinc-50 underline"
-        >
-          Repositório Github
-        </a>
-        <div className="py-4 flex gap-2 items-center">
+        <Heading className="mb-4">{data.title}</Heading>
+        <Text>{data.description}</Text>
+        {data.repoUrl && (
+          <Link
+            target="_blank"
+            to={data.repoUrl}
+            rel="noopener noreferrer"
+            className="text-zinc-50 underline"
+          >
+            Repositório Github
+          </Link>
+        )}
+        <div className="py-4 flex gap-2 items-center mt-4">
           {data.stacks &&
             data.stacks?.map((stack) => (
               <div
                 key={stack.id}
                 className="px-3 py-1 bg-foreground/10 border border-zinc-600 text-zinc-50 rounded"
               >
-                <small className="text-xs">{stack.name}</small>
+                <Text as="small">{stack.name}</Text>
               </div>
             ))}
         </div>
