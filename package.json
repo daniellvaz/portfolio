@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "generated:api": "orval",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
