@@ -2,7 +2,7 @@ import Axios, { AxiosError, type AxiosRequestConfig } from "axios";
 
 export const AXIOS_INSTANCE = Axios.create();
 
-const baseURL = "http://localhost:1337/api";
+const baseURL = import.meta.env.VITE_STRAPI_URL || "http://localhost:1337/api";
 
 const customInstance = <T>(config: AxiosRequestConfig): Promise<T> => {
   const source = Axios.CancelToken.source();

@@ -16,6 +16,8 @@ export function Home() {
     populate: "*",
   });
 
+  console.log(stacks);
+
   return (
     <main className="w-full bg-background mt-[5rem]">
       <div className="w-[358px] h-[358px] fixed -top-[179px] -right-[300px] rounded-full bg-primary-main blur-[350px]"></div>
@@ -46,7 +48,7 @@ export function Home() {
           {stacks &&
             stacks.data &&
             stacks.data.map((stack) => (
-              <img src={import.meta.env.VITE_STRAPI_URL + stack.image?.url} />
+              <img src={stack.image?.url} key={stack.id} />
             ))}
         </div>
       </section>

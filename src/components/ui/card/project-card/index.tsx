@@ -51,7 +51,7 @@ export function ProjectCard({ data }: ProjectCardProps) {
         </div>
       </div>
       <img
-        src={import.meta.env.VITE_STRAPI_URL + data.cover?.url}
+        src={data.cover?.url}
         className="w-full rounded-lg fade-in"
         alt={data.cover?.alternativeText}
       />
